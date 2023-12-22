@@ -1,26 +1,29 @@
-## Variables in the public INPACT-S
+## INPACT-S
 
-appln_auth - the 2 digit code of the country to which the patent application was filed
-appln_auth_iso3 - the 3 digit code of the country to which the patent application was filed
-appln_auth_name - the standardized name of the country to which the patent application was filed
-person_ctry_code - the 2 digit code of the country in which the patent applicant resides
+#### Variables:
+```
+appln_auth            - the 2 digit code of the country to which the patent application was filed
+appln_auth_iso3       - the 3 digit code of the country to which the patent application was filed
+appln_auth_name       - the standardized name of the country to which the patent application was filed
+person_ctry_code      - the 2 digit code of the country in which the patent applicant resides
 person_ctry_code_iso3 - the 3 digit code of the country in which the patent applicant resides
 person_ctry_code_name - the standardized name of the country in which the patent applicant resides
-appln_filing_year - the year in which the specific application being counted was filed (NOTE: it is possible and perhaps common for a technology to be filed in different jurisdictions in different years. In this cases, each are counted in the year that specific application was filed, NOT the year of the first application).
-isic_rev3_2 - The 2-digit industry code of the patent according to ISIC Revision 3
-patents_applt - The count of bilateral, industry level, yearly patents counted by applicants country (as opposed to inventors country)
+appln_filing_year     - the year in which the specific application being counted was filed (NOTE: it is possible and perhaps common for a technology to be filed in different jurisdictions in different years. In this cases, each are counted in the year that specific application was filed, NOT the year of the first application).
+isic_rev3_2           - The 2-digit industry code of the patent according to ISIC Revision 3
+patents_applt         - The count of bilateral, industry level, yearly patents counted by applicants country (as opposed to inventors country)
+```
 
-* Data used in the create of this dataset:
+#### Data used in the create of this dataset:
 
-Patent data -- PATSTAT Global 2021 - single edition (Autumn) -- https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#
-IPC - ISIC crosswalk -- Lybert and Zolas (2014) -- https://sites.google.com/site/nikolaszolas/PatentCrosswalk
-Regional Authority Members -- Original Data
-WIPO Codes -- WIPO ST.3 Table -- https://www.uspto.gov/patents/apply/applying-online/country-codes-wipo-st3-table#heading-2
-ISO 3-Digit Codes -- https://www.iban.com/country-codes
-WIPO - ISO3 crosswalk -- Original Data
-WIPO Patent Data -- WIPO IP Statistics Data Center -- https://www3.wipo.int/ipstats/
+* Patent data -- [PATSTAT Global 2021 - single edition (Autumn)](https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#)
+* IPC - [ISIC crosswalk -- Lybert and Zolas (2014)](https://sites.google.com/site/nikolaszolas/PatentCrosswalk)
+* Regional Authority Members -- Original Data
+* WIPO Codes -- [WIPO ST.3 Table](https://www.uspto.gov/patents/apply/applying-online/country-codes-wipo-st3-table#heading-2)
+* ISO 3-Digit Codes -- [https://www.iban.com/country-codes](https://www.iban.com/country-codes)
+* WIPO - ISO3 crosswalk -- Original Data
+* WIPO Patent Data -- [WIPO IP Statistics Data Center](https://www3.wipo.int/ipstats/)
 
-* Summary of the process (full replication scripts available online along with all data except that which is propritory such as the raw PATSTAT data):
+#### Summary of the process (full replication scripts available online along with all data except that which is propritory such as the raw PATSTAT data):
 
 1) First we take the output of SQL code provided by deRassenfosse & Siegler (2019) and merge it into our data for the purposes of filling in some of the missing country codes from the raw PATSTAT data.
 
@@ -34,26 +37,29 @@ WIPO Patent Data -- WIPO IP Statistics Data Center -- https://www3.wipo.int/ipst
 
 6) Finally, we deal with the blanks. One possibility would be to deal with these similar to how we did regional authorities. The issue with that is which patent data is reported and which is imputed is likely not a random sample. Using a method like that would reinforce bias in the data. We choose to estimate based on WIPO value. In other words, if 25% of patent applications to Canada come from the US in 2015, then we give 25% of our blank Canadian patents to the US. One necessary assumption is that this share holds across industries.
 
-## Variables in the public INPACT-S-Citations
+## INPACT-S-Citations
 
-person_ctry_code - the 2 digit code of the country in which the inventor of the citing patent resides
-cited_person_ctry_code - the 2 digit code of the country in which the inventor of the cited patent resides
-isic_rev3_2 - the 2-digit industry code of the citing patent according to ISIC Revision 3
-cited_isic_rev3_2 - the 2-digit industry code of the cited patent according to ISIC Revision 3
-appln_filing_year - the year in which the citing patent was filed
+#### Variables:
+```
+person_ctry_code        - the 2 digit code of the country in which the inventor of the citing patent resides
+cited_person_ctry_code  - the 2 digit code of the country in which the inventor of the cited patent resides
+isic_rev3_2             - the 2-digit industry code of the citing patent according to ISIC Revision 3
+cited_isic_rev3_2       - the 2-digit industry code of the cited patent according to ISIC Revision 3
+appln_filing_year       - the year in which the citing patent was filed
 cited_appln_filing_year - the year in which the cited patent was filed
-citations - the count of citations. This is at the industry and country level. So every industry and country involved in a citing-cited relationship in an application gets 1 citation.
+citations               - the count of citations. This is at the industry and country level. So every industry and country involved in a citing-cited relationship in an application gets 1 citation.
+```
 
-* Data used in the create of this dataset:
+ #### Data used in the create of this dataset:
 
-Patent data -- PATSTAT Global 2021 - single edition (Autumn) -- https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#
-IPC - ISIC crosswalk -- Lybert and Zolas (2014) -- https://sites.google.com/site/nikolaszolas/PatentCrosswalk
-Regional Authority Members -- Original Data
-WIPO Codes -- WIPO ST.3 Table -- https://www.uspto.gov/patents/apply/applying-online/country-codes-wipo-st3-table#heading-2
-ISO 3-Digit Codes -- https://www.iban.com/country-codes
-WIPO - ISO3 crosswalk -- Original Data
-WIPO Patent Data -- WIPO IP Statistics Data Center -- https://www3.wipo.int/ipstats/
+* Patent data -- [PATSTAT Global 2021 - single edition (Autumn)](https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#)
+* IPC - [ISIC crosswalk -- Lybert and Zolas (2014)](https://sites.google.com/site/nikolaszolas/PatentCrosswalk)
+* Regional Authority Members -- Original Data
+* WIPO Codes -- [WIPO ST.3 Table](https://www.uspto.gov/patents/apply/applying-online/country-codes-wipo-st3-table#heading-2)
+* [ISO 3-Digit Codes](https://www.iban.com/country-codes)
+* WIPO - ISO3 crosswalk -- Original Data
+* WIPO Patent Data -- [WIPO IP Statistics Data Center](https://www3.wipo.int/ipstats/)
 
-* Summary of the process:
+#### Summary of the process:
 
 This process is very complicated. The provided scripts are well documented and the best way to learn the process is by reading those carefully.
