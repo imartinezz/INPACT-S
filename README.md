@@ -8,9 +8,13 @@ appln_auth_name       - the standardized name of the country to which the patent
 person_ctry_code      - the 2 digit code of the country in which the patent applicant resides
 person_ctry_code_iso3 - the 3 digit code of the country in which the patent applicant resides
 person_ctry_code_name - the standardized name of the country in which the patent applicant resides
-appln_filing_year     - the year in which the specific application being counted was filed (NOTE: it is possible and perhaps common for a technology to be filed in different jurisdictions in different years. In this cases, each are counted in the year that specific application was filed, NOT the year of the first application).
+appln_filing_year     - the year in which the specific application being counted was filed
+                        (NOTE: it is possible and perhaps common for a technology to be filed in
+                        different jurisdictions in different years. In this cases, each are counted
+                        in the year that specific application was filed, NOT the year of the first application).
 isic_rev3_2           - The 2-digit industry code of the patent according to ISIC Revision 3
-patents_applt         - The count of bilateral, industry level, yearly patents counted by applicants country (as opposed to inventors country)
+patents_applt         - The count of bilateral, industry level, yearly patents counted by applicants country
+                        (as opposed to inventors country)
 ```
 
 #### Data used in the create of this dataset:
@@ -47,7 +51,8 @@ isic_rev3_2             - the 2-digit industry code of the citing patent accordi
 cited_isic_rev3_2       - the 2-digit industry code of the cited patent according to ISIC Revision 3
 appln_filing_year       - the year in which the citing patent was filed
 cited_appln_filing_year - the year in which the cited patent was filed
-citations               - the count of citations. This is at the industry and country level. So every industry and country involved in a citing-cited relationship in an application gets 1 citation.
+citations               - the count of citations. This is at the industry and country level. So every industry
+                          and country involved in a citing-cited relationship in an application gets 1 citation.
 ```
 
  #### Data used in the create of this dataset:
