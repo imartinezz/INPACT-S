@@ -1,3 +1,6 @@
+When using the data, please cite the following paper:
+LaBelle, J., Martinez-Zarzoso, I., Santacreu, A. M. & Yotov, Y. 2023. "Cross-border Patenting, Globalization, and Development," Working Papers 2023-031, Federal Reserve Bank of St. Louis. [https://ideas.repec.org/p/fip/fedlwp/97470.html](https://ideas.repec.org/p/fip/fedlwp/97470.html)
+
 ## INPACT-S
 
 #### Variables:
@@ -27,7 +30,7 @@ patents_applt         - The count of bilateral, industry level, yearly patents c
 * WIPO - ISO3 crosswalk -- Original Data
 * WIPO Patent Data -- [WIPO IP Statistics Data Center](https://www3.wipo.int/ipstats/)
 
-#### Summary of the process (full replication scripts available online along with all data except that which is propritory such as the raw PATSTAT data):
+#### Summary of the process (full replication scripts available upon request along with all data except that which is propritory such as the raw PATSTAT data):
 
 1) First we take the output of SQL code provided by deRassenfosse & Siegler (2019) and merge it into our data for the purposes of filling in some of the missing country codes from the raw PATSTAT data.
 
@@ -67,4 +70,4 @@ citations               - the count of citations. This is at the industry and co
 
 #### Summary of the process:
 
-This process is very complicated. The provided scripts are well documented and the best way to learn the process is by reading those carefully.
+This process is very complicated. The scripts are well documented and the best way to learn the process is by reading those carefully.
