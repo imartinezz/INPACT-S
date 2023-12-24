@@ -20,7 +20,7 @@ patents_applt         - The count of bilateral, industry level, yearly patents c
                         (as opposed to inventors country)
 ```
 
-#### Data used in the create of this dataset:
+#### Data used in the creation of this dataset:
 
 * Patent data -- [PATSTAT Global 2021 - single edition (Autumn)](https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#)
 * IPC - [ISIC crosswalk -- Lybert and Zolas (2014)](https://sites.google.com/site/nikolaszolas/PatentCrosswalk)
@@ -58,7 +58,7 @@ citations               - the count of citations. This is at the industry and co
                           and country involved in a citing-cited relationship in an application gets 1 citation.
 ```
 
- #### Data used in the create of this dataset:
+ #### Data used in the creation of this dataset:
 
 * Patent data -- [PATSTAT Global 2021 - single edition (Autumn)](https://shop.epo.org/en/Data-and-services/PATSTAT/c/patstat?q=%3Arelevance%3Aperiod%3ABI_ANNUAL&text=#)
 * IPC - [ISIC crosswalk -- Lybert and Zolas (2014)](https://sites.google.com/site/nikolaszolas/PatentCrosswalk)
