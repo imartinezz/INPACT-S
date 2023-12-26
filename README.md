@@ -1,7 +1,8 @@
 When using the data, please cite the following paper:
 LaBelle, J., Martinez-Zarzoso, I., Santacreu, A. M. & Yotov, Y. 2023. "Cross-border Patenting, Globalization, and Development," Working Papers 2023-031, Federal Reserve Bank of St. Louis. [https://ideas.repec.org/p/fip/fedlwp/97470.html](https://ideas.repec.org/p/fip/fedlwp/97470.html)
 
-Please send comments to the authors to: martinei@uji.es
+Please send any comments or suggestions concerning the dataset to: martinei@uji.es
+
 ## INPACT-S
 
 #### Variables:
