@@ -36,15 +36,15 @@ patents_applt         - The count of bilateral, industry level, yearly patents c
 
 1) First we take the output of SQL code provided by deRassenfosse & Siegler (2019) and merge it into our data for the purposes of filling in some of the missing country codes from the raw PATSTAT data.
 
-2) Next, we apply our fractional counting method from the after we impute blank person_ctry_code in the raw data using deRassanfosse method
+2) Next, we apply our fractional counting method after we impute blank person_ctry_code in the raw data using deRassanfosse method
 
 3) Next, we use the crosswalks created by Lybbert and Zolas (2014) to convert IPC codes to ISIC revision 3 2 digit codes
 
-4) Some groups of countries form regional patent authorities which take on the responsibility of reviewing granting patents. However, the end goal of the applicant is to seek enforcement in certain countries that take part in the regional agreement. It is highly unlikely that each county attract patents to the regional authority equally so we attempt to reasonably estimate where each patent is inteded to be enforced. This means assigning an application to a member country based on the country most likely to have attracted that patent.
+4) Some groups of countries form regional patent authorities, which take on the responsibility of reviewing granting patents. However, the end goal of the applicant is to seek enforcement in certain countries that take part in the regional agreement. It is highly unlikely that each county attract patents to the regional authority equally so we attempt to reasonably estimate where each patent is inteded to be enforced. This means assigning an application to a member country based on the country most likely to have attracted that patent.
 
-5) Next, we get rid of bad data. PATSTAT reads in the full-text data from filings. This means typos on the application can make it into the raw data. For example, if someone puts EN instead of UK. It would theoretically be possible to guess the most likely intended authority but we choose to drop them. Here we take WIPO's official country list and merge it in we drop whatever is not found in the official list.
+5) Next, we get rid of bad data. PATSTAT reads in the full-text data from filings. This means typos on the application can make it into the raw data. For example, if someone puts EN instead of UK. It would theoretically be possible to guess the most likely intended authority but we choose to drop them. Here we take WIPO's official country list and merge it in, we drop whatever is not found in the official list.
 
-6) Finally, we deal with the blanks. One possibility would be to deal with these similar to how we did regional authorities. The issue with that is which patent data is reported and which is imputed is likely not a random sample. Using a method like that would reinforce bias in the data. We choose to estimate based on WIPO value. In other words, if 25% of patent applications to Canada come from the US in 2015, then we give 25% of our blank Canadian patents to the US. One necessary assumption is that this share holds across industries.
+6) Finally, we deal with the blanks. One possibility would be to deal with these similar to how we did with regional authorities. The issue with that is which patent data is reported and which is imputed is likely not a random sample. Using a method like that would reinforce bias in the data. We choose to estimate based on WIPO value. In other words, if 25% of patent applications to Canada come from the US in 2015, then we give 25% of our blank Canadian patents to the US. One necessary assumption is that this share holds across industries.
 
 ## INPACT-S-Citations
 
